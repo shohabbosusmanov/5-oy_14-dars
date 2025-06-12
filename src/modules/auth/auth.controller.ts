@@ -33,7 +33,7 @@ export class AuthController {
 
   @Post('login')
   async login(
-    @Body() loginAuthDto: Partial<CreateAuthDto>,
+    @Body() loginAuthDto: CreateAuthDto,
     @Res({ passthrough: true }) res: Response,
   ) {
     const token = await this.authService.login(loginAuthDto);

@@ -75,7 +75,7 @@ export class AuthService {
     return token;
   }
 
-  async login(loginAuthDto: Partial<CreateAuthDto>) {
+  async login(loginAuthDto: CreateAuthDto) {
     const findUser = await this.db.prisma.user.findUnique({
       where: { phone_number: loginAuthDto.phone_number },
     });
