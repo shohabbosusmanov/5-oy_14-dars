@@ -1,12 +1,12 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { ResdisServcie } from 'src/core/database/redis.service';
+import { RedisServcie } from 'src/core/database/redis.service';
 import { generate } from 'otp-generator';
 import { SmsService } from './sms.service';
 
 @Injectable()
 export class OtpService {
   constructor(
-    private redisService: ResdisServcie,
+    private redisService: RedisServcie,
     private smsService: SmsService,
   ) {}
 

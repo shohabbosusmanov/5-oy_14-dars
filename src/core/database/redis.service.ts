@@ -3,12 +3,12 @@ import Redis from 'ioredis';
 import { OtpService } from 'src/modules/auth/otp.service';
 
 @Injectable()
-export class ResdisServcie {
+export class RedisServcie {
   private logger: Logger;
   public redis: Redis;
   private duration: number = 60;
   constructor() {
-    this.logger = new Logger(ResdisServcie.name, { timestamp: true });
+    this.logger = new Logger(RedisServcie.name, { timestamp: true });
     this.redis = new Redis({
       port: process.env.REDIS_PORT as unknown as number,
       host: process.env.REDIS_HOST,
